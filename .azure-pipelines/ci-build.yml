@@ -45,14 +45,14 @@ steps:
   inputs:
     command: build
     projects: Microsoft.Graph.Auth.sln
-    arguments: '-c release --no-incremental'
+    arguments: '-c Debug --no-incremental'
 
 - task: DotNetCoreCLI@2
   displayName: 'run tests'
   inputs:
     command: 'test'
     projects: 'tests/Microsoft.Graph.Auth.Test/Microsoft.Graph.Auth.Test.csproj'
-    arguments: '--configuration release --verbosity normal'
+    arguments: '--configuration Debug --verbosity normal'
 
 # - powershell: |
 #     git clean -fdx
